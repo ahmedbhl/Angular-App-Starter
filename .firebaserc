@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "zci": "zci-fr"
+  },
+  "targets": {
+    "zci-fr": {
+      "hosting": {
+        "staging": [
+          "zci-fr"
+        ]
+      }
+    }
+  }
+}
