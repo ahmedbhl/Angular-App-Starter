@@ -328,6 +328,17 @@
 
 <div class="content" role="main">
 
+  <!-- I18n Check-->
+  <div class="card-container">
+    <h2>{{ 'HOME.TITLE' | translate }}</h2>
+    <label>
+      {{ 'HOME.SELECT' | translate }}
+      <select #langSelect (change)="translate.use(langSelect.value)">
+        <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+      </select>
+    </label>
+  </div>
+
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
 

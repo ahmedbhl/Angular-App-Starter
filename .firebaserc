@@ -1,12 +1,12 @@
 {
   "projects": {
-    "zci": "zci-fr"
+    "angularAppStarter": "appName"
   },
   "targets": {
-    "zci-fr": {
+    "appName": {
       "hosting": {
         "staging": [
-          "zci-fr"
+          "appName"
         ]
       }
     }

@@ -1,5 +1,5 @@
 {
-  "name": "zci",
+  "name": "angularAppStarter",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -20,6 +20,8 @@
     "@angular/platform-browser-dynamic": "~12.2.14",
     "@angular/router": "~12.2.14",
     "@angular/service-worker": "~12.2.14",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
     "rxjs": "~6.6.7",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
