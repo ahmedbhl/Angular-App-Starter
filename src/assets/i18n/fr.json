@@ -1,7 +1,11 @@
 {
-    "HOME": {
-      "TITLE": "Bonjour Angular avec ngx-translate !",
-      "SELECT": "Changer la langue"
-    }
+  "home": {
+    "name-version": "Angular App Starter V16",
+    "label": "Angular App Starter est en cours d'exécution!!",
+    "title": "Bienvenue sur Angular App Starter, découvrez la Version 16",
+    "sub-title-1": "Ce starter Angular a pour but de fournir aux développeurs une base initiale robuste pour démarrer de nouveaux projets Angular, en leur offrant une structure organisée et des fonctionnalités pré-configurées pour accélérer le processus de développement.",
+    "sub-title-2": "Voici quelques liens pour vous aider à démarrer",
+    "en": "English",
+    "fr": "Français"
   }
-  
+}

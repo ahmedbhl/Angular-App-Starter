@@ -114,7 +114,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": ["src/**/*.{ts,html}", "tests/**/*.{ts,html}"],
+            "lintFilePatterns": ["src/**/*.{ts,html}"],
             "cache": true,
             "cacheLocation": ".angular/eslint.cache.json"
           }

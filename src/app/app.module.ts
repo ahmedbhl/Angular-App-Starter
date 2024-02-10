@@ -1,13 +1,14 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeModule } from './modules/home/home.module';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { LazyModule } from './modules/home/lazy.module';
+import { BlankPageModule } from './modules/blank-page/blank-page.module';
 
 
 // AoT requires an exported function for factories
@@ -20,8 +21,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
+    AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
@@ -29,6 +30,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       registrationStrategy: 'registerWhenStable:30000'
     }),
     TranslateModule.forRoot({
+      defaultLanguage: 'en',
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
@@ -36,7 +38,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
     }),
 
-    HomeModule,
+    LazyModule,
+    BlankPageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
