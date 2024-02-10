@@ -12,10 +12,12 @@
     "build": "ng build -c production",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
+    "lint:scss": "stylelint \"src/**/*.scss\"",
     "test": "ng test",
     "version": "npm run -s version:check && npm run -s version:changelog && git add -A",
     "version:changelog": "conventional-changelog -i CHANGELOG.md -s -r 0 -p angular",
-    "version:check": "npm run lint && npm test && npm run build"
+    "version:check": "npm run lint && npm test && npm run build",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
