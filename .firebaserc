@@ -1,12 +1,12 @@
 {
   "projects": {
-    "angularAppStarter": "appName"
+    "angularAppStarter": "abcooding"
   },
   "targets": {
-    "appName": {
+    "abcooding": {
       "hosting": {
         "staging": [
-          "appName"
+          "abcooding"
         ]
       }
     }
