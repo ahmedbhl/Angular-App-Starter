@@ -1,15 +1,15 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LazyModule } from './modules/home/lazy.module';
 import { BlankPageModule } from './modules/blank-page/blank-page.module';
-
+import { LazyModule } from './modules/home/lazy.module';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -19,9 +19,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   declarations: [
     AppComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
+  bootstrap: [AppComponent], imports: [BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
@@ -37,11 +35,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         deps: [HttpClient]
       }
     }),
-
     LazyModule,
-    BlankPageModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    BlankPageModule], providers: [provideHttpClient(withInterceptorsFromDi())]
 })
 export class AppModule { }
